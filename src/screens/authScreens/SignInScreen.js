@@ -20,6 +20,7 @@ export default function SignInScreen({navigation}) {
         <View style={styles.container}>
             <Header title = "My Account" type="arrowleft" navigation = {navigation}/>
 
+            {/* Coming Soon */}
             <View>
                 <Text style = {styles.title}>Sign In</Text>
             </View>
