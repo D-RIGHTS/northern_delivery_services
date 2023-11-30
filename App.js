@@ -4,6 +4,8 @@ import { useDimensions } from '@react-native-community/hooks';
 
 import { colors } from './global/styles';
 import SignInScreen from './src/screens/authScreens/SignInScreen';
+import SignInWelcomeScreen from './src/screens/authScreens/SignInWelcomeScreen';
+import RootNavigator from './src/navigation/RootNavigator';
 
 export default function App() {
   
@@ -13,7 +15,8 @@ export default function App() {
         barStyle = 'light-content'
         backgroundColor = 'red'
       />
-      <SignInScreen/>
+      
+      <RootNavigator/>
     </SafeAreaView>
   );
 }

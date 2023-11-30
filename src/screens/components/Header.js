@@ -8,12 +8,16 @@ import { AntDesign } from '@expo/vector-icons';
 
 
 
-export default function Header ({title, type}) {
+export default function Header ({title, type, navigation}) {
 
     return (
         <SafeAreaView style ={styles.header}>
             <View style = {styles.arrow}>
-                <AntDesign name={type} size={30} color="white"/>
+                <AntDesign 
+                    name={type} 
+                    size={30} 
+                    color="white"
+                    onPress={() => {navigation.goBack()}}/>
             </View>
             
             <Text style ={styles.headerText}>

@@ -3,12 +3,13 @@ import { View, StyleSheet, Dimensions, SafeAreaView, Text, TextInput } from 'rea
 
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
+import { Button, SocialIcon  } from 'react-native-elements';
 
 import Header from '../components/Header';
-import { colors, parameters } from '../../../global/styles';
+import { colors, parameters, title } from '../../../global/styles';
 
 
-export default function SignInScreen() {
+export default function SignInScreen({navigation}) {
 
     const [ txtInput2Focus, setTxtInput2Focus] = useState();
 
@@ -17,7 +18,7 @@ export default function SignInScreen() {
 
     return(
         <View style={styles.container}>
-            <Header title = "My Account" type="arrowleft"/>
+            <Header title = "My Account" type="arrowleft" navigation = {navigation}/>
 
             <View>
                 <Text style = {styles.title}>Sign In</Text>
@@ -53,6 +54,59 @@ export default function SignInScreen() {
                     <Ionicons name="eye-off-outline" size={20} color={colors.grey4} />
                 </Animatable.View>
             </View>
+            
+            <View style={{marginHorizontal: 20, marginVertical: 30}}>
+                <Button
+                    title="Sign In"
+                    buttonStyle = {parameters.styledButton}
+                    titleStyle = {parameters.buttonTitle}
+                    onPress={navigation.navigate('HomeScreen')}
+                />
+            </View>
+
+            <View style = {{alignItems: 'center'}}>
+                <Text style = {{ ...styles.text1, textDecorationLine: "underline" }} >Forgot Password?</Text>
+            </View>
+
+            <View style = {{alignItems: 'center', marginTop: 20, marginBottom: 20}}>
+                <Text style = {{fontSize: 20, fontWeight: "bold"}}> OR </Text>
+            </View>
+
+            <View style={{marginHorizontal: 20, marginVertical: 30}}>
+                <SocialIcon
+                    title='Sign In with Facebook'
+                    button
+                    type='facebook'
+                    style = {parameters.styledButtonFB}
+                    onPress = {() => {
+                        
+                    }}
+                />
+            </View>
+
+            <View style={{marginHorizontal: 20, marginVertical: 3}}>
+                <SocialIcon
+                    title='Sign In with Google'
+                    button
+                    type='google'
+                    style = {parameters.styledButtonG}
+                    onPress = {() => {
+
+                    }}
+                />
+            </View>
+
+            <View style = {{margin: 10, marginLeft: 20 }}>
+                <Text style = {{ ...styles.text2}} >New on Northern Delivery Services?</Text>
+            </View>
+
+            <View style = {{alignItems: 'flex-end', marginRight: 30}}>
+                <Button
+                    title="Create an Account"
+                    buttonStyle = {parameters.styledButtonCreate}
+                    titleStyle = {parameters.buttonTitleCreate}
+                />
+            </View>
 
         </View>
     )
@@ -65,6 +119,10 @@ const styles = StyleSheet.create({
     text1: {
         color: colors.grey4,
         fontSize: 15 
+    },
+    text2: {
+        color: colors.grey4,
+        fontSize: 12 
     },
     title: {
         color: '#ff8c52',
