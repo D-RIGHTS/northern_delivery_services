@@ -28,35 +28,38 @@ export default function FoodCard({
                     style={{...styles.image, width:screenWidth}}
                     source = {{uri:images}}
                 />
-            </View>
 
-            <View>
-                <View>
-                    <Text style = {styles.restaurantName}>
-                        {restaurantName}
-                    </Text>
-                </View>
-                <View style={{flexDirection: 'row', flex: 1}}>
-                    <View style={styles.distance}>
-                        <Icon 
-                            type='material'
-                            name='place'
-                            color= {colors.grey2}
-                            size= {18}
-                        />
-                        <Text style={styles.Min}>
-                            {farAway} Min
+<               View>
+                    <View>
+                        <Text style = {styles.restaurantName}>
+                            {restaurantName}
                         </Text>
                     </View>
+                    <View style={{flexDirection: 'row', flex: 1}}>
+                        <View style={styles.distance}>
+                            <Icon 
+                                type='material'
+                                name='place'
+                                color= {colors.grey2}
+                                size= {18}
+                            />
+                            <Text style={styles.Min}>
+                                {farAway} Min
+                            </Text>
+                        </View>
 
-                    <View style={{flex:9, flexDirection: 'row'}}>
-                        <Text style={styles.address}>
-                            {businessAddress}
-                        </Text>
+                        <View style={{flex:9, flexDirection: 'row'}}>
+                            <Text style={styles.address}>
+                                {businessAddress}
+                            </Text>
+                        </View>
+
                     </View>
-
                 </View>
+
             </View>
+
+        
             <View style={styles.review}>
                 <Text style={styles.average}>
                     {averageReview} 
@@ -78,6 +81,7 @@ const styles = StyleSheet.create({
       borderColor: colors.grey4,
       borderBottomRightRadius: 5,
       borderBottomLeftRadius: 5
+       
     },
     image: {
         borderTopLeftRadius: 5,
